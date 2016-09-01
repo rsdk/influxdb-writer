@@ -39,7 +39,7 @@ class MMW:
         :param fields_dict: values to be sent
         """
         jc = self.json_core.copy()
-        jc["time"] = int(time() * 1e9)
+        jc["time"] = int(time() * 1e9)  # from seconds to nanaoseconds
         jc["fields"] = fields_dict
         self.send_buffer.append(jc)
         self.check_and_send_to_db()
